@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TODAY=$(date +"%Y-%m-%d")
-BUCKET="open.fda.gov-explorer-adladae"
+BUCKET="open.fda.gov-pmi"
 
 echo "Pushing to: ${BUCKET}"
 
