@@ -5,7 +5,6 @@ import '@trussworks/react-uswds/lib/index.css'
 import '../css/index.scss'
 import '../css/components/Layout.scss'
 import '../css/pages/HomePage.scss'
-import vetImage from '../images/vet_dog_cat_2.avif'
 import Layout from "../components/Layout";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -13,13 +12,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <section className='main-content'>
         <div className='paragraph-hero flex'>
-          <img
-            alt='Go to FDA website'
-            className='vet-image'
-            src={vetImage}
-          />
           <div className='banner-paragraph bg-primary clr-white padding-3'>
-            <h2>Animal Drug Labeling and Adverse Events</h2>
+            <h2>Animal Drug Labeling and Adverse Events!</h2>
             <div className='flex flex-column flex-fill'>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Orci a scelerisque purus semper eget duis. Sollicitudin nibh sit amet commodo.

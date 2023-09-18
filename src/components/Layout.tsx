@@ -67,6 +67,7 @@ const links: Array<Object> = [
   }
 ]
 
+
 export default function Layout({ children }) {
   return (
     <main style={pageStyles}>
@@ -109,7 +110,7 @@ export default function Layout({ children }) {
             </div>
           </div>
         </div>
-        <div className='flex' style={{borderBottom: '3px solid #222c67'}}>
+        {/*<div className='flex' style={{borderBottom: '3px solid #222c67'}}>
           <div className='nav-header bg-primary'>
             <div>
               <Link className='clr-white nav-button' to='/'>Animal Drug Labeling and Adverse Events</Link>
@@ -134,7 +135,7 @@ export default function Layout({ children }) {
               <i/>
             </Link>
           </div>
-        </div>
+        </div>*/}
       </div>
       {children}
       <footer
