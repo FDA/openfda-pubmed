@@ -7,28 +7,33 @@ import '../css/index.scss'
 import '../css/components/Layout.scss'
 import '../css/pages/HomePage.scss'
 import Layout from "../components/Layout";
-import {Search, Table} from '@trussworks/react-uswds'
+import {Search, Table, Alert} from '@trussworks/react-uswds'
 import axios from 'axios';
 import {API_LINK} from "../constants/api";
 
 const IndexPage: React.FC<PageProps> = () => {
 
     const [drugs, setDrugs] = useState([]);
+    const [msg, setMsg] = useState('');
 
     const fetchDrugs = async (name) => {
         try {
-            if (name.length<3) {
-                throw new RangeError("Search term too short");
+            setMsg('');
+            if (name.length < 3) {
+                setDrugs([]);
+                setMsg('At least three characters are required.');
+            } else {
+                const response = await axios.get(`${API_LINK}/drug/pmi.json?search=product_name:*${name}*`);
+                setDrugs(response.data.results);
             }
-            const response = await axios.get(`${API_LINK}/drug/pmi.json?search=product_name:*${name}*`);
-            setDrugs(response.data.results);
         } catch (e) {
             setDrugs([]);
+            setMsg('No results found.');
         }
     };
 
     const searchHandler = async event => {
-        await fetchDrugs(event.target[0].value);
+        await fetchDrugs(event.target[0].value.trim());
     };
 
     return (
@@ -57,6 +62,11 @@ const IndexPage: React.FC<PageProps> = () => {
                             }} placeholder="Enter at least 3 characters"></Search>
                         </div>
                     </div>
+                    {msg.length > 0 ? (<div className='grid-row padding-1'>
+                        <div className='grid-col flex-auto'>
+                            <Alert type={"info"} headingLevel={'h1'}>{msg}</Alert>
+                        </div>
+                    </div>) : ('')}
                     <div className='grid-row flex-column'>
                         <div className='grid-col padding-left-1'>
                             {drugs.length > 0 ? (
