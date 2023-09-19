@@ -9,6 +9,7 @@ import Layout from "../components/Layout";
 import {Search, Table} from '@trussworks/react-uswds'
 import axios from 'axios';
 import {API_LINK} from "../constants/api";
+import {Link} from "gatsby"
 
 const IndexPage: React.FC<PageProps> = () => {
 
@@ -69,7 +70,9 @@ const IndexPage: React.FC<PageProps> = () => {
                                     {
                                         drugs.map((drug) => (
                                             <tr>
-                                                <td>{drug.product_name}</td>
+                                                <td>{drug.product_name} (<Link to={'#'}>PDF</Link>) (<Link
+                                                    to={'#'}>XML</Link>)
+                                                </td>
                                                 <td>{drug.manufacturer_name}</td>
                                             </tr>
                                         ))
