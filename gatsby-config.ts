@@ -1,9 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: `/pmi`,
   siteMetadata: {
     title: `openfda-pmi`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://openfda-site.preprod.fda.gov`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
