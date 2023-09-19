@@ -54,12 +54,10 @@ const IndexPage: React.FC<PageProps> = () => {
                             }} placeholder="Enter at least 3 characters"></Search>
                         </div>
                     </div>
-                </div>
-                <div className='bg-white padding-left-2 padding-right-3 padding-bottom-3'>
-                    <div className='grid-row flex-row'>
-                        <div className='grid-col flex-auto padding-left-1'>
+                    <div className='grid-row flex-column'>
+                        <div className='grid-col padding-left-1'>
                             {drugs.length > 0 ? (
-                                <Table bordered={true}>
+                                <Table fullWidth={true} bordered={true}>
                                     <thead>
                                     <tr>
                                         <th scope="col">Product Name</th>
