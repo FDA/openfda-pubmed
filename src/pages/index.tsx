@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import type {HeadFC, PageProps} from "gatsby"
+import {Link} from "gatsby"
 import '@trussworks/react-uswds/lib/uswds.css'
 import '@trussworks/react-uswds/lib/index.css'
 import '../css/index.scss'
@@ -9,7 +10,6 @@ import Layout from "../components/Layout";
 import {Search, Table} from '@trussworks/react-uswds'
 import axios from 'axios';
 import {API_LINK} from "../constants/api";
-import {Link} from "gatsby"
 
 const IndexPage: React.FC<PageProps> = () => {
 
@@ -17,7 +17,10 @@ const IndexPage: React.FC<PageProps> = () => {
 
     const fetchDrugs = async (name) => {
         try {
-            const response = await axios.get(`${API_LINK}/drug/pmi.json?search=product_name:${name}`);
+            if (name.length<3) {
+                throw new RangeError("Search term too short");
+            }
+            const response = await axios.get(`${API_LINK}/drug/pmi.json?search=product_name:*${name}*`);
             setDrugs(response.data.results);
         } catch (e) {
             setDrugs([]);
