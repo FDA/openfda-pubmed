@@ -81,7 +81,7 @@ const IndexPage: React.FC<PageProps> = () => {
                                     {
                                         drugs.map((drug) => (
                                             <tr>
-                                                <td>{drug.product_name} (<Link to={'#'}>PDF</Link>) (<Link
+                                                <td>{drug.product_name} (<Link to={'https://download.open.fda.gov/pmi_sample.pdf'}>PDF</Link>) (<Link
                                                     to={'#'}>XML</Link>)
                                                 </td>
                                                 <td>{drug.manufacturer_name}</td>
