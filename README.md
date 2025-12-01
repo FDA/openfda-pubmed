@@ -1,1 +1,1 @@
-# openfda-pmi
+# openfda-pubmed
