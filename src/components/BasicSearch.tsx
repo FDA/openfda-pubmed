@@ -110,6 +110,7 @@ export default function BasicSearch({searchHeader, errorText, placeholder, searc
     if (search.length < searchLength) {
       setJournals(null)
       setErrMsg(errorText)
+        return
     } else {
       if (year.value !== 'all') {
         search_query = `${search_query}${search_parameter?'+AND+':'search='}year:${year.value}`
