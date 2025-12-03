@@ -54,7 +54,7 @@ for (let year = new Date().getFullYear(); year !== null;) {
 }
 
 export default function BasicSearch({searchHeader, errorText, placeholder, searchField, searchLength, tableType}) {
-  const [journals, setJournals] = useState<[]>([])
+    const [journals, setJournals] = useState<[] | null>(null)
   const [year, setYear] = useState(year_range[0])
   const [errMsg, setErrMsg] = useState('')
   const [search, setSearch] = useState('')
