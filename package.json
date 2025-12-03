@@ -1,8 +1,8 @@
 {
-  "name": "openfda-crl",
+  "name": "Peer Reviewed Journals",
   "version": "1.0.0",
   "private": true,
-  "description": "openfda-crl",
+  "description": "Peer Reviewed Journals",
   "author": "violet.wren",
   "keywords": [
     "gatsby"
